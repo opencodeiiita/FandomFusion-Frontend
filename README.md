@@ -39,7 +39,7 @@ Welcome to **FandomFusion** – your gateway to exploring, curating, and sharing
 
 ## ⚡ Tech Stack
 
--   **Frontend:** React.js, Material-UI
+-   **Frontend:** React.js + Vite, Material-UI
 -   **APIs:**
     -   [RAWG API](https://api.rawg.io/docs/) for games
     -   [Jikan API](https://docs.api.jikan.moe/) for anime
@@ -76,10 +76,10 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
 7. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
-8. You’re ready to explore! Access the frontend application on `localhost:3000`.
+8. You’re ready to explore! Access the frontend application on `localhost:5173`.
 
 > [!TIP]
 > To change port number for the developement of this project for mac users. Kindly refer to this article:
@@ -126,18 +126,18 @@ https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-reac
 .
 ├── 🧾 package.json
 ├── 🧾 package-lock.json
+├── 🧾 .env.example
 ├──  ℹ️  README.md
+├── 📄 index.html
+├── 📄 eslint.config.js
+├── 📄 vite.config.js
 ├── 📁 public
-│   ├── 📄 index.html
 │   └── 🖼️ favicon.ico
 └── 📁 src
     ├── 📁 assets
-    │   ├── 📁 images
-    │   └── 📁 styles
-    │       ├── 📄 index.css
-    │       └── 📄 App.css
+    │   └──  📁 images
     ├── 📁 components
-    │       └── 📄 WelcomeCard.jsx
+    │       └── 📄 SignUp.jsx
     ├── 📁 pages
     │       └── 📄 Home.jsx
     ├── 📁 services(api)
@@ -146,7 +146,9 @@ https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-reac
     ├── 📁 routers
     │   └── 📄 AppRouter.jsx
     ├── 📄 App.jsx
-    └── 📄 index.js
+    ├──📄 main.jsx
+    ├── 📄 index.css
+    └── 📄 App.css
 
 ```
 > [!NOTE]
