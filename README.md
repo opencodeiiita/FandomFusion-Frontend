@@ -184,6 +184,18 @@ Building fandom magic together means staying connected. Whether you’re brainst
 
 ## 📋 Contribution Guidelines
 
+### Some important points to remember before pushing the code
+
+1. Make sure you have [Prettier](https://prettier.io/) installed, can be installed as an extension in most IDEs and Code Editors.
+2. Make the code and directory structure well organized like it was.
+3. Add suitable comments in the code, for better readability of the code, and do not make any change in the code which was not included in the issue.
+4. Properly create your commit message, and add screenshots for better clarity. Also try to include a screen recording.
+
+> [!CAUTION]
+> Failure to abide these guidelines might result in a temporary ban!
+
+### Some general guidelines
+
 We’re passionate about fostering a friendly and welcoming environment for all contributors. Let’s focus on what matters most – our shared love for fandoms and great code quality.
 
 - **People first**: Be respectful and patient. We’re all here because of our shared passion.
