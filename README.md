@@ -4,16 +4,26 @@ Welcome to **FandomFusion** – your gateway to exploring, curating, and sharing
 
 ## 📚 Table of Contents
 
-- [Features](#🌐-features)
-- [Tech Stack](#⚡-tech-stack)
-- [Dependencies](#📦-dependencies)
-- [How To Setup](#🛠️-how-to-setup)
-- [Reference Links](#🔗-reference-links)
-- [Directory Structure](#📁-directory-structure)
-- [Claim an Issue](#👆-claim-an-issue)
-- [Communication](#💻-communication)
-- [Contribution Guidelines](#📋-contribution-guidelines)
-- [Mentors](#🤝-mentors)
+- [Summary](#-summary)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Dependencies](#-dependencies)
+- [How To Setup](#️-how-to-setup)
+- [Reference Links](#-reference-links)
+- [Directory Structure](#-directory-structure)
+- [Claim an Issue](#-claim-an-issue)
+- [Communication](#-communication)
+- [Contribution Guidelines](#-contribution-guidelines)
+- [Mentor](#-mentor)
+
+## 📝 Summary
+
+FandomFusion is another social media, where you can connect with people who has same taste like you, let it be animes, movies, and even videogames (yes, we hear you).
+
+_What will this app do?_
+It will include a home feed, where you will be recommended various medias according to your followers, what they have suggested or recommended. Then user will be able to add friend, recommend any media, write a post and flaunt your profile.
+
+Various media will also be rated according to the global critics, and user will also be able to add their own rating and a note to remind of how great/bad it was. (yeah, we forget sometimes lol)
 
 ## 🌐 Features
 
@@ -41,7 +51,7 @@ Welcome to **FandomFusion** – your gateway to exploring, curating, and sharing
 
 ## ⚡ Tech Stack
 
-- **Frontend:** React.js + Vite (with TailwindCSS, and preferebly without TypeScript)
+- **Frontend:** React.js + Vite (with TailwindCSS, without TypeScript)
 - **APIs:**
   - [RAWG API](https://api.rawg.io/docs/) for games
   - [Jikan API](https://docs.api.jikan.moe/) for animes
@@ -82,6 +92,9 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
    ```
 
 8. You’re ready to explore! Access the frontend application on `localhost:5173`.
+
+> [!NOTE]
+> Commands like `git clone` and `npm install` will not work if you have proxy enabled, also doing other network required tasks will not so try setting up proxy for that interface first! (sadly gaming can't be resolved)
 
 > [!TIP]
 > To change port number for the developement of this project for mac users. Kindly refer to this article:
