@@ -4,46 +4,48 @@ Welcome to **FandomFusion** – your gateway to exploring, curating, and sharing
 
 ## 📚 Table of Contents
 
--   [Features](#🌐-features)
--   [Tech Stack](#⚡-tech-stack)
--   [Dependencies](#📦-dependencies)
--   [How To Setup](#🛠️-how-to-setup)
--   [Reference Links](#🔗-reference-links)
--   [Directory Structure](#📁-directory-structure)
--   [Claim an Issue](#👆-claim-an-issue)
--   [Communication](#💻-communication)
--   [Contribution Guidelines](#📋-contribution-guidelines)
--   [Mentors](#🤝-mentors)
+- [Features](#🌐-features)
+- [Tech Stack](#⚡-tech-stack)
+- [Dependencies](#📦-dependencies)
+- [How To Setup](#🛠️-how-to-setup)
+- [Reference Links](#🔗-reference-links)
+- [Directory Structure](#📁-directory-structure)
+- [Claim an Issue](#👆-claim-an-issue)
+- [Communication](#💻-communication)
+- [Contribution Guidelines](#📋-contribution-guidelines)
+- [Mentors](#🤝-mentors)
 
 ## 🌐 Features
 
--   **Search Across Public APIs**: Dive into your favorite universes! Search for anime, games, and movies using integrated public APIs. Powered by RAWG, Jikan, and TMDB, FandomFusion ensures you’re always up-to-date with the latest trends.
+- **Search Across Public APIs**: Dive into your favorite universes! Search for anime, games, and movies using integrated public APIs. Powered by RAWG, Jikan, and TMDB, FandomFusion ensures you’re always up-to-date with the latest trends.
 
--   **Custom List Creation**: Craft your ultimate fan lists. Whether it’s top anime battles, iconic game soundtracks, or unforgettable movie twists, create personalized collections and rate each item like the true connoisseur you are. Share your lists with fellow fans and spread the love!
+- **Custom List Creation**: Craft your ultimate fan lists. Whether it’s top anime battles, iconic game soundtracks, or unforgettable movie twists, create personalized collections and rate each item like the true connoisseur you are. Share your lists with fellow fans and spread the love!
 
--   **Social Interaction**: Connect and collaborate with fellow superfans. Follow others to keep up with their curated lists, chat directly on the platform, and build a community around your shared fandoms. Let’s unite the fandom universe!
+- **Social Interaction**: Connect and collaborate with fellow superfans. Follow others to keep up with their curated lists, chat directly on the platform, and build a community around your shared fandoms. Let’s unite the fandom universe!
 
--   **Dynamic and Responsive User Interface**: FandomFusion’s sleek, modern design looks stunning across all your devices, so you can enjoy exploring your fandoms wherever you are.
+- **Dynamic and Responsive User Interface**: FandomFusion’s sleek, modern design looks stunning across all your devices, so you can enjoy exploring your fandoms wherever you are.
 
--   **Home Page Highlights**:
-    -   Discover what’s trending now in anime, games, and movies with real-time updates.
-    -   Explore curated recommendations designed to help you uncover hidden gems.
+- **Home Page Highlights**:
 
--   **Top Picks of All Time**:
-    -   Browse all-time greats from every corner of fandom culture. From top-rated anime to groundbreaking games and legendary movies, find what truly defines each medium.
-    -   Filter by genre, year, or ratings for a tailored experience.
+  - Discover what’s trending now in anime, games, and movies with real-time updates.
+  - Explore curated recommendations designed to help you uncover hidden gems.
 
--   **Comprehensive Search Filters**: Zero in on exactly what you’re looking for with filters like genre, release date, rating, and popularity. 
+- **Top Picks of All Time**:
 
--   **User Profiles**: Show off your fandom cred! Display your activity, curated lists, and follower stats. Explore other users’ profiles to find inspiration or your next binge-worthy series.
+  - Browse all-time greats from every corner of fandom culture. From top-rated anime to groundbreaking games and legendary movies, find what truly defines each medium.
+  - Filter by genre, year, or ratings for a tailored experience.
+
+- **Comprehensive Search Filters**: Zero in on exactly what you’re looking for with filters like genre, release date, rating, and popularity.
+
+- **User Profiles**: Show off your fandom cred! Display your activity, curated lists, and follower stats. Explore other users’ profiles to find inspiration or your next binge-worthy series.
 
 ## ⚡ Tech Stack
 
--   **Frontend:** React.js + Vite, Material-UI
--   **APIs:**
-    -   [RAWG API](https://api.rawg.io/docs/) for games
-    -   [Jikan API](https://docs.api.jikan.moe/) for anime
-    -   [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) for movies
+- **Frontend:** React.js + Vite (with TailwindCSS, and preferebly without TypeScript)
+- **APIs:**
+  - [RAWG API](https://api.rawg.io/docs/) for games
+  - [Jikan API](https://docs.api.jikan.moe/) for animes
+  - [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) for movies
 
 ## 📦 Dependencies
 
@@ -65,7 +67,7 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
    cd FandomFusion-Frontend
    ```
 
-5. Install all necessary dependencies:
+5. Install all necessary dependencies (make sure npm or yarn is configured for proxy if on college proxy, lookup [here](#️-starters)):
 
    ```bash
    npm install
@@ -83,42 +85,44 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
 
 > [!TIP]
 > To change port number for the developement of this project for mac users. Kindly refer to this article:
-https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-react-tips-1a957b54759e
+> https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-react-tips-1a957b54759e
 
 ## 🔗 Reference Links
 
 ### 🗺️ Starters
 
--   [Download and install the latest version of Git.](https://git-scm.com/downloads)
--   [Set your username in Git.](https://help.github.com/articles/setting-your-username-in-git)
--   [Set your commit email address in Git.](https://help.github.com/articles/setting-your-commit-email-address-in-git)
--   [Setup Nodejs](https://nodejs.org/en/blog/release/v16.18.1/)
+- [Download and install the latest version of Git.](https://git-scm.com/downloads)
+- [Set your username in Git.](https://help.github.com/articles/setting-your-username-in-git)
+- [Setup proxy for git](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy)
+- [Set your commit email address in Git.](https://help.github.com/articles/setting-your-commit-email-address-in-git)
+- [Setup Nodejs](https://nodejs.org/en/blog/release/v16.18.1/)
+- [Setup proxy for npm](https://stackoverflow.com/questions/7559648/is-there-a-way-to-make-npm-install-the-command-to-work-behind-proxy)
 
 ### 🚀 React
 
--   [React official Documentation](https://react.dev/learn)
--   [React JS Crash Course](https://youtu.be/w7ejDZ8SWv8?si=wGvhGzbJeEp-Sjv5)
--   [React Hooks Detailed](https://www.youtube.com/playlist?list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A)
+- [React official Documentation](https://react.dev/learn)
+- [React JS Crash Course](https://youtu.be/w7ejDZ8SWv8?si=wGvhGzbJeEp-Sjv5)
+- [React Hooks Detailed](https://www.youtube.com/playlist?list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A)
 
 ### 🎨 Tailwind CSS
 
--   [Tailwind Components](https://www.material-tailwind.com/docs/react/collapse)
--   [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
--   [Official Docs](https://tailwindcss.com/docs/installation)
--   [Tailwind CSS Crash Course](https://youtu.be/UBOj6rqRUME?si=iKI5kUFD0WgP4cL7)
+- [Tailwind Components](https://www.material-tailwind.com/docs/react/collapse)
+- [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
+- [Official Docs](https://tailwindcss.com/docs/installation)
+- [Tailwind CSS Crash Course](https://youtu.be/UBOj6rqRUME?si=iKI5kUFD0WgP4cL7)
 
 ### Useful Links from Backend
 
--   [Backend Repo](https://github.com/opencodeiiita/GrepIt-Backend/)
+- [Backend Repo](https://github.com/opencodeiiita/GrepIt-Backend/)
 
--   [RAWG API Documentation](https://api.rawg.io/docs/)
--   [Jikan API Documentation](https://docs.api.jikan.moe/)
--   [TMDB API Documentation](https://developer.themoviedb.org/reference/intro/getting-started)
+- [RAWG API Documentation](https://api.rawg.io/docs/)
+- [Jikan API Documentation](https://docs.api.jikan.moe/)
+- [TMDB API Documentation](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ### Tools
 
--   [Download Git](https://git-scm.com/downloads)
--   [Set up Node.js](https://nodejs.org/en/blog/release/)
+- [Download Git](https://git-scm.com/downloads)
+- [Set up Node.js](https://nodejs.org/en/blog/release/)
 
 ## 📁 Directory Structure
 
@@ -151,6 +155,7 @@ https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-reac
     └── 📄 App.css
 
 ```
+
 > [!NOTE]
 > Adding new files? Make sure to add them here too – let’s keep it tidy and helpful for new contributors.
 
@@ -158,7 +163,7 @@ https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-reac
 
 Comment on the issue to claim it. If there’s no activity on your claim after two days, it may be reassigned to another contributor. Stuck? Ask for help on our Discord channel – no fan gets left behind!
 
--   Don’t forget to make your entry in the [CONTRIBUTORS](CONTRIBUTORS.md) file before submitting your PR.
+- Don’t forget to make your entry in the [CONTRIBUTORS](CONTRIBUTORS.md) file before submitting your PR.
 
 ## 💻 Communication
 
@@ -168,20 +173,20 @@ Building fandom magic together means staying connected. Whether you’re brainst
 
 We’re passionate about fostering a friendly and welcoming environment for all contributors. Let’s focus on what matters most – our shared love for fandoms and great code quality.
 
--   **People first**: Be respectful and patient. We’re all here because of our shared passion.
--   **Commit with purpose**: Name your commits meaningfully and reference relevant issue numbers. Follow the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
--   **Show, don’t just tell**: Screenshots or short videos can make reviews smoother.
--   **Avoid duplicate PRs**: If necessary, comment on the older PR with the follow-up PR number and close the obsolete one.
--   **Three-day rule**: PRs inactive for more than three days may be closed.
+- **People first**: Be respectful and patient. We’re all here because of our shared passion.
+- **Commit with purpose**: Name your commits meaningfully and reference relevant issue numbers. Follow the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
+- **Show, don’t just tell**: Screenshots or short videos can make reviews smoother.
+- **Avoid duplicate PRs**: If necessary, comment on the older PR with the follow-up PR number and close the obsolete one.
+- **Three-day rule**: PRs inactive for more than three days may be closed.
 
 Let’s create something amazing together. 🌟
 
-## 🤝 Mentors
+## 🤝 Mentor
 
-1.  **Arpit Anand**  
-    _Opencode Bot Wizard and Anime Enthusiast_  
-    `GitHub:` [Buddha-11](https://github.com/Buddha-11)  
-    `Discord:` Buddha__  
+- **Bhavya Gupta** _(aka Gamin8ing)_  
+   _Discord handler and an all-time gamer_  
+   `GitHub:` [Gamin8ing](https://github.com/Gamin8ing)  
+   `Discord:` gamin8ing
 
 ## 💪 Thanks To All Contributors
 
@@ -195,8 +200,8 @@ Every contributor is a part of our fandom family. Show off your profile picture 
     replace <GITHUB_USERNAME> with your GitHub username
     replace <FULL_NAME> with your full name
     -->
-    <a href="https://github.com/Buddha-11" title="Arpit Anand">
-        <img src="https://github.com/Buddha-11.png" width="70px" alt="Arpit Anand">
+    <a href="https://github.com/Gamin8ing" title="Gamin8ing">
+        <img src="https://github.com/Gamin8ing.png" width="50px" alt="Arpit Anand">
     </a>
 </div>
 
