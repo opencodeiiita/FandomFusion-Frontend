@@ -100,6 +100,15 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
 > To change port number for the developement of this project for mac users. Kindly refer to this article:
 > https://blog.stackademic.com/how-to-change-the-default-port-number-in-react-react-tips-1a957b54759e
 
+### Figma
+
+First Update the designs and wireframes in this [Figma File](https://www.figma.com/design/mMUIwUxHn2zCCJgqSwRVzv/Untitled?node-id=0-1&node-type=canvas&t=zHMpMHGoHIaAKzKb-0) before coding and bringing it to life.
+
+**_This is an important step_** before pushing the final code.
+
+> [!TIP]
+> Figma app or even website might not work if SOCKS proxy is set, make sure to disable SOCKS proxy before working with figma :)
+
 ## 🔗 Reference Links
 
 ### 🗺️ Starters
@@ -192,7 +201,7 @@ Building fandom magic together means staying connected. Whether you’re brainst
 4. Properly create your commit message, and add screenshots for better clarity. Also try to include a screen recording.
 
 > [!CAUTION]
-> Failure to abide these guidelines might result in a temporary ban!
+> Failure to follow these guidelines might result in a temporary ban!
 
 ### Some general guidelines
 
