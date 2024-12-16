@@ -87,8 +87,17 @@ const contributors = [
 		name: "Dhruv Samdani",
 		github: "https://github.com/CosmikBlunder",
 		avatar: "https://avatars.githubusercontent.com/u/159910694?v=4",
-	}
-
+	},
+  {
+		name: "Samandeep Singh Sidhu",
+		github: "https://github.com/Darkknight0125",
+		avatar: "https://avatars.githubusercontent.com/u/149161015?s=400&v=4",
+	},
+  {
+		name: "Sai Chithra",
+		github: "https://github.com/SaiChithra333",
+		avatar: "https://avatars.githubusercontent.com/u/158245450?v=4",
+  }
 	// Add more contributors here
 ];
 
