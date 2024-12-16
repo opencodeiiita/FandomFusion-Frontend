@@ -22,6 +22,11 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/96346957?s=48&v=4"
   },
   {
+		name: "Kanav",
+		github: "https://github.com/HGRgamer",
+		avatar: "https://avatars.githubusercontent.com/u/72596840?v=4"
+  },
+  {
 		name: "Ritesh",
 		github: "https://github.com/rndastech",
 		avatar: "https://avatars.githubusercontent.com/u/148974606?v=4",
@@ -56,6 +61,11 @@ const contributors = [
 		name: "Dhruv Goyal",
 		github: "https://github.com/dhruvgoyal-098",
 		avatar: "https://avatars.githubusercontent.com/u/184801588?s=400&v=4",
+  },
+  {
+		name: "Aditya Aggarwal",
+		github: "https://github.com/adityaagg4689",
+		avatar: "https://avatars.githubusercontent.com/u/184803834?s=400&v=4",
 	}
 	// Add more contributors here
 ];
