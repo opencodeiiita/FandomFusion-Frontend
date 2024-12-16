@@ -2,16 +2,52 @@ import React from "react";
 
 const contributors = [
 	{
-		name: "Your Name",
-		github: "https://github.com/yourusername",
-		avatar: "https://github.com/yourusername.png",
+		name: "apexcoder007",
+		github: "https://github.com/apexcoder007",
+		avatar: "https://avatars.githubusercontent.com/u/155891907?s=400&u=b074c4b80f8146e0d1959110ea680af8468792d1&v=4",
 	},
-	// Add more contributors here
+	{
+		name: "Ashish",
+		github: "https://github.com/Asheeesh9",
+		avatar: "https://avatars.githubusercontent.com/u/149046896?v=4",
+	},
+	{
+		name: "Shwet",
+		github: "https://github.com/oopshwet",
+		avatar: "https://avatars.githubusercontent.com/u/167511008?v=4&size=64",
+  },
+  {
+		name: "Vinayak",
+		github: "https://github.com/07CalC",
+		avatar: "https://avatars.githubusercontent.com/u/96346957?s=48&v=4"
+  },
+  {
+		name: "Ritesh",
+		github: "https://github.com/rndastech",
+		avatar: "https://avatars.githubusercontent.com/u/148974606?v=4",
+	},
+	{
+		name: "Sharuka",
+		github: "https://github.com/SHARUKA-2005",
+		avatar: "https://avatars.githubusercontent.com/u/157145133?v=4",
+	},
+
+	{
+    name: "Snehal",
+		github: "https://github.com/Snehalgupta-07",
+		avatar: "https://avatars.githubusercontent.com/u/153509096?v=4",
+	},
+  {
+		name: "Asim",
+		github: "https://github.com/kalim-Asim",
+		avatar: "https://avatars.githubusercontent.com/u/177461099?v=4"
+	},
 	{
 		name:"Nitya Bhavsar",
 		github:"https://github.com/NityaB25",
 		avatar:"https://avatars.githubusercontent.com/u/149292926?s=400&v=4",
 	}
+	// Add more contributors here
 ];
 
 const Contributors = () => {
