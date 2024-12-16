@@ -2,19 +2,14 @@ import React from "react";
 
 const contributors = [
 	{
-		name: "Your Name",
-		github: "https://github.com/yourusername",
-		avatar: "https://github.com/yourusername.png",
+		name: "apexcoder007",
+		github: "https://github.com/apexcoder007",
+		avatar: "https://avatars.githubusercontent.com/u/155891907?s=400&u=b074c4b80f8146e0d1959110ea680af8468792d1&v=4",
 	},
 	{
 		name: "Ashish",
 		github: "https://github.com/Asheeesh9",
 		avatar: "https://avatars.githubusercontent.com/u/149046896?v=4",
-	},
-	{}
-		name: " Shwet Kumar ",
-		github: "https://github.com/https://github.com/oopshwet",
-		avatar: "https://https://avatars.githubusercontent.com/u/167511008?v=4.com/yourusername.png",
 	},
 	// Add more contributors here
 	
