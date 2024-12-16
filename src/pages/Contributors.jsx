@@ -92,7 +92,12 @@ const contributors = [
 		name: "Sai Chithra",
 		github: "https://github.com/SaiChithra333",
 		avatar: "https://avatars.githubusercontent.com/u/158245450?v=4",
-  }
+  },
+  	{
+		name: "Sarvesh Kumar",
+		github: "https://github.com/Sarvesh0955",
+		avatar: "https://avatars.githubusercontent.com/u/142673987?v=4",
+	}
 
 	// Add more contributors here
 ];
