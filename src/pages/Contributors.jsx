@@ -82,7 +82,13 @@ const contributors = [
 		name: "Swarup Narkhede",
 		github: "https://github.com/swarupn17",
 		avatar: "https://avatars.githubusercontent.com/u/86045051?v=4",
+	},
+	{
+		name: "Dhruv Samdani",
+		github: "https://github.com/CosmikBlunder",
+		avatar: "https://avatars.githubusercontent.com/u/159910694?v=4",
 	}
+
 	// Add more contributors here
 ];
 
