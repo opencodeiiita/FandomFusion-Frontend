@@ -84,10 +84,16 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/86045051?v=4",
 	},
 	{
+		name: "Samandeep Singh Sidhu",
+		github: "https://github.com/Darkknight0125",
+		avatar: "https://avatars.githubusercontent.com/u/149161015?s=400&v=4",
+	},
+  {
 		name: "Sai Chithra",
 		github: "https://github.com/SaiChithra333",
 		avatar: "https://avatars.githubusercontent.com/u/158245450?v=4",
   }
+
 	// Add more contributors here
 ];
 
