@@ -33,6 +33,11 @@ const contributors = [
 	},
 
 	{
+    name: "Snehal",
+		github: "https://github.com/Snehalgupta-07",
+		avatar: "https://avatars.githubusercontent.com/u/153509096?v=4",
+	},
+  {
 		name: "Asim",
 		github: "https://github.com/kalim-Asim",
 		avatar: "https://avatars.githubusercontent.com/u/177461099?v=4"
