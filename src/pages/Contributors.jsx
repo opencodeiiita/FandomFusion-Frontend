@@ -7,6 +7,11 @@ const contributors = [
 		avatar: "https://github.com/yourusername.png",
 	},
 	// Add more contributors here
+	{
+		name:"Nitya Bhavsar",
+		github:"https://github.com/NityaB25",
+		avatar:"https://avatars.githubusercontent.com/u/149292926?s=400&v=4",
+	}
 ];
 
 const Contributors = () => {
