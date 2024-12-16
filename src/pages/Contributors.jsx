@@ -58,6 +58,11 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/149420119?v=4",
 	},
 	{
+		name: "Dhruv Goyal",
+		github: "https://github.com/dhruvgoyal-098",
+		avatar: "https://avatars.githubusercontent.com/u/184801588?s=400&v=4",
+  },
+  {
 		name: "Aditya Aggarwal",
 		github: "https://github.com/adityaagg4689",
 		avatar: "https://avatars.githubusercontent.com/u/184803834?s=400&v=4",
