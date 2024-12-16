@@ -11,9 +11,8 @@ const contributors = [
 		github: "https://github.com/Asheeesh9",
 		avatar: "https://avatars.githubusercontent.com/u/149046896?v=4",
 	},
-	
-	{
-		name: "Shwet Kumar",
+	{}
+		name: " Shwet Kumar ",
 		github: "https://github.com/https://github.com/oopshwet",
 		avatar: "https://https://avatars.githubusercontent.com/u/167511008?v=4.com/yourusername.png",
 	},
