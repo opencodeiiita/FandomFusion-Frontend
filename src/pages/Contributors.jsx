@@ -56,6 +56,11 @@ const contributors = [
 		name: "Puravi Mohta",
 		github: "https://github.com/puravimohta15",
 		avatar: "https://avatars.githubusercontent.com/u/149420119?v=4",
+	},
+	{
+		name: "Aditya Aggarwal",
+		github: "https://github.com/adityaagg4689",
+		avatar: "https://avatars.githubusercontent.com/u/184803834?s=400&v=4",
 	}
 	// Add more contributors here
 ];
