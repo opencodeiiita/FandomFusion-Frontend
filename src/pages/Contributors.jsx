@@ -31,6 +31,12 @@ const contributors = [
 		github: "https://github.com/SHARUKA-2005",
 		avatar: "https://avatars.githubusercontent.com/u/157145133?v=4",
 	},
+
+	{
+        name: "Snehal",
+		github: "https://github.com/Snehalgupta-07",
+		avatar: "https://avatars.githubusercontent.com/u/153509096?v=4",
+	},
 	// Add more contributors here
 	
 ];
