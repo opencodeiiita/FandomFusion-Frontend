@@ -12,6 +12,11 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/149046896?v=4",
 	},
 	{
+		name: "Shwet",
+		github: "https://github.com/oopshwet",
+		avatar: "https://avatars.githubusercontent.com/u/167511008?v=4&size=64",
+  },
+  {
 		name: "Vinayak",
 		github: "https://github.com/07CalC",
 		avatar: "https://avatars.githubusercontent.com/u/96346957?s=48&v=4"
@@ -22,6 +27,7 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/148974606?v=4",
 	},
 	// Add more contributors here
+	
 ];
 
 const Contributors = () => {
