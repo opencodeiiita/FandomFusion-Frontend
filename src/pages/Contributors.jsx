@@ -77,6 +77,11 @@ const contributors = [
 		name: "Krishna Mohan",
 		github: "https://github.com/krishnamohan2006",
 		avatar: "https://avatars.githubusercontent.com/u/148936099?s=400&v=4",
+  },
+  {
+		name: "Swarup Narkhede",
+		github: "https://github.com/swarupn17",
+		avatar: "https://avatars.githubusercontent.com/u/86045051?v=4",
 	}
 	// Add more contributors here
 ];
