@@ -41,9 +41,13 @@ const contributors = [
 		name: "Asim",
 		github: "https://github.com/kalim-Asim",
 		avatar: "https://avatars.githubusercontent.com/u/177461099?v=4"
+	},
+	{
+		name:"Nitya Bhavsar",
+		github:"https://github.com/NityaB25",
+		avatar:"https://avatars.githubusercontent.com/u/149292926?s=400&v=4",
 	}
 	// Add more contributors here
-	
 ];
 
 const Contributors = () => {
