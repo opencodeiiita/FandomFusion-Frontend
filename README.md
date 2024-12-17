@@ -102,7 +102,7 @@ To bring this fandom experience to life, you’ll need **npm** or **yarn** insta
 
 ### Figma
 
-First Update the designs and wireframes in this [Figma File](https://www.figma.com/design/mMUIwUxHn2zCCJgqSwRVzv/Untitled?node-id=0-1&node-type=canvas&t=zHMpMHGoHIaAKzKb-0) before coding and bringing it to life.
+First Update the designs and wireframes in this [Figma File](https://www.figma.com/design/QgTS0qjVqZKiqUT7RTH0aA/FandomFusion?node-id=42-12552&t=bAsEdvDcrrbAjLmi-1) before coding and bringing it to life.
 
 **_This is an important step_** before pushing the final code.
 
