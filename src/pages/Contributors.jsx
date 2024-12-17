@@ -134,6 +134,11 @@ const contributors = [
 		avatar: "https://avatars.githubusercontent.com/u/153047425?v=4",
 	
 	},
+	{
+		name: "Sameer Reddy",
+		github: "https://github.com/kenma-w",
+		avatar: "https://avatars.githubusercontent.com/u/152846901?v=4",
+	}
 
 	// Add more contributors here
 ];
