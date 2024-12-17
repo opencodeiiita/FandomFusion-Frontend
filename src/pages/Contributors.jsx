@@ -128,7 +128,12 @@ const contributors = [
 		github: "https://github.com/Atharwa23",
 		avatar: "https://avatars.githubusercontent.com/u/149394219?s=400&v=4",
 	},
-
+	{
+		name: "Saurabh Kashyap",
+		github: "https://github.com/saurabhk9919",
+		avatar: "https://avatars.githubusercontent.com/u/153047425?v=4",
+	
+	},
 
 	// Add more contributors here
 ];
