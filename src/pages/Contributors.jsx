@@ -117,8 +117,12 @@ const contributors = [
 		name:"Priyam J Chakrabarty",
 		github:"https://github.com/PriyamJChakrabarty",
 		avatar:"https://avatars.githubusercontent.com/u/144861619?v=4"
+	},
+	{
+		name:"Debankur Dutta",
+		github:"https://github.com/Debankur04",
+		avatar:"https://avatars.githubusercontent.com/u/134576718?s=96&v=4"
 	}
-	
 
 
 	// Add more contributors here
