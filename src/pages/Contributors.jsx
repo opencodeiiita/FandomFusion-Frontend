@@ -122,7 +122,12 @@ const contributors = [
 		name:"Debankur Dutta",
 		github:"https://github.com/Debankur04",
 		avatar:"https://avatars.githubusercontent.com/u/134576718?s=96&v=4"
-	}
+	},
+	{
+		name: "Atharwa23",
+		github: "https://github.com/Atharwa23",
+		avatar: "https://avatars.githubusercontent.com/u/149394219?s=400&v=4",
+	},
 
 
 	// Add more contributors here
