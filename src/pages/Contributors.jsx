@@ -143,8 +143,13 @@ const contributors = [
 		name: "Abbhilash Maurya",
 		github: "https://github.com/Abhilash-0322",
 		avater: "https://avatars.githubusercontent.com/u/136215541?v=4"
+	},
+	{
+		name: "Suyash Kumar",
+		github: "https://github.com/Skr-suyash",
+		avater: "https://avatars.githubusercontent.com/u/43753331?v=4"
 	}
-
+	
 	// Add more contributors here
 ];
 
