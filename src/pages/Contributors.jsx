@@ -138,6 +138,11 @@ const contributors = [
 		name: "Sameer Reddy",
 		github: "https://github.com/kenma-w",
 		avatar: "https://avatars.githubusercontent.com/u/152846901?v=4",
+	},
+	{
+		name: "Abbhilash Maurya",
+		github: "https://github.com/Abhilash-0322",
+		avater: "https://avatars.githubusercontent.com/u/136215541?v=4"
 	}
 
 	// Add more contributors here
