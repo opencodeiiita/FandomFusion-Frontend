@@ -112,6 +112,11 @@ const contributors = [
 		name:"Ayush Patel",
 		github:"https://github.com/ayush-patel1",
 		avatar:"https://avatars.githubusercontent.com/u/148226375?v=4"
+	},
+	{
+		name:"Priyam J Chakrabarty",
+		github:"https://github.com/PriyamJChakrabarty",
+		avatar:"https://avatars.githubusercontent.com/u/144861619?v=4"
 	}
 	
 
