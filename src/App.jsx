@@ -1,73 +1,99 @@
-import React from 'react';
-import Card from './components/Card';
+
+import { Eye, Play, Tv, Users } from "lucide-react";
+import { Card } from "./components/Card";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import NotFound from "./pages/404.jsx";
+import Contributors from "./pages/Contributors.jsx";
 
 const App = () => {
-  // Sample media data with more detailed information
-  const mediaItems = [
-    {
-      type: 'movie',
-      title: 'Inception',
-      subtitle: 'Science Fiction, Thriller',
-      imageUrl: "https://www.usatoday.com/gcdn/presto/2020/07/14/USAT/886994a3-dbeb-48ab-a34e-5a83ffbf307f-D1_2Inception_Cov_31.JPG",
-      imdbRating: 8.8,
-      genres: ['Sci-Fi', 'Action', 'Thriller'],
-      releaseYear: 2010
-    },
-    {
-      type: 'game',
-      title: 'The Last of Us Part II',
-      subtitle: 'Action, Adventure, Survival',
-      imageUrl: "https://image.api.playstation.com/vulcan/img/rnd/202010/2618/itbSm3suGHSSHIpmu9CCPBRy.jpg",
-      platformLogos: [
-        "https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg"
-      ],
-      starRating: 9.3,
-      genres: ['Action', 'Adventure', 'Survival Horror'],
-      releaseYear: 2020
-    },
-    {
-      type: 'anime',
-      title: 'Attack on Titan',
-      subtitle: 'Dark Fantasy, Post-apocalyptic',
-      imageUrl: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/02/attackontitan_anime_colossustitan_eren.jpg",
-      starRating: 9.5,
-      genres: ['Dark Fantasy', 'Action', 'Survival'],
-      releaseYear: 2013
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white p-6">
-      <div className="container mx-auto">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-display text-primary mb-4">
-            Media Explorer
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover and curate your favorite movies, games, and anime with our interactive media cards.
-          </p>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mediaItems.map((media, index) => (
-            <Card
-              key={index}
-              type={media.type}
-              title={media.title}
-              subtitle={media.subtitle}
-              imageUrl={media.imageUrl}
-              imdbRating={media.imdbRating}
-              starRating={media.starRating}
-              platformLogos={media.platformLogos}
-              genres={media.genres}
-              releaseYear={media.releaseYear}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+    <Router>
+      {/* Main routes defined here */}
+      <Routes>
+        <Route path="/" element={<MyCards />} /> {/* Corrected component name */}
+        <Route path="/contributors" element={<Contributors />} />
+        {/* 404 page */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 };
 
+function MyCards() {
+  return (
+    <>
+      <div className="flex justify-center items-center h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Card
+            type="game"
+            title="Red Dead Redemption 2"
+            subtitle="By Rockstar Games"
+            imageUrl="https://c4.wallpaperflare.com/wallpaper/219/629/87/red-dead-redemption-2-red-dead-redemption-hd-wallpaper-preview.jpg"
+            rating={92}
+            votes={10000}
+            tags={["Trending", "Best in Asia"]}
+            stats={{
+              primary: {
+                icon: <Users className="w-4 h-4" />,
+                label: "Active Players",
+                value: 2500,
+              },
+              secondary: {
+                icon: <Play className="w-4 h-4" />,
+                label: "Total Plays",
+                value: 8400000,
+              },
+            }}
+          />
+          <Card
+            type="movie"
+            title="Inception"
+            subtitle="Directed by Christopher Nolan"
+            imageUrl="https://wallpapercave.com/wp/msi4htu.jpg"
+            rating={88}
+            votes={12000}
+            tags={["Top 5 IMDB", "Critics' Pick"]}
+            stats={{
+              primary: {
+                icon: <Users className="w-4 h-4" />,
+                label: "Currently Watching",
+                value: 4100,
+              },
+              secondary: {
+                icon: <Eye className="w-4 h-4" />,
+                label: "Total Views",
+                value: 15000000,
+              },
+            }}
+          />
+          <Card
+            type="anime"
+            title="Mushoku Tensei"
+            subtitle="Produced by Studio Bind"
+            imageUrl="https://images7.alphacoders.com/126/thumbbig-1266440.webp"
+            rating={95}
+            votes={5000}
+            tags={["Top Rated", "Fan Favorite"]}
+            stats={{
+              primary: {
+                icon: <Tv className="w-4 h-4" />,
+                label: "Episodes Available",
+                value: 24,
+              },
+              secondary: {
+                icon: <Eye className="w-4 h-4" />,
+                label: "Total Views",
+                value: 18500000,
+              },
+            }}
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default App;
+

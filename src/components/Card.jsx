@@ -1,121 +1,144 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Star, Gamepad, Film, Tv } from 'lucide-react';
 
-// Media Type Icons using Lucide React Icons
-const MediaTypeIcons = {
-  game: Gamepad,
-  movie: Film,
-  anime: Tv,
+import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+import {
+  Star,
+  Popcorn,
+  Sparkles,
+  MousePointerClickIcon as CursorClick,
+} from "lucide-react";
+import { Badge } from "./Badge";
+import { Button } from "./Button";
+
+const tagColors = {
+  game: ["bg-red-500", "bg-green-500"],
+  movie: ["bg-red-500", "bg-green-500"],
+  anime: ["bg-red-500", "bg-green-500"],
 };
 
-const Card = ({
+const ratingIcons = {
+  game: <Star className="inline-block w-4 h-4 text-yellow-400" />,
+  movie: <Popcorn className="inline-block w-4 h-4 text-yellow-400" />,
+  anime: <Sparkles className="inline-block w-4 h-4 text-yellow-400" />,
+};
+
+const ctaLabels = {
+  game: "Connect with Fellow Gamers",
+  movie: "Join Our Movie Buffs Chat",
+  anime: "Join the Otaku Family!",
+};
+
+export function Card({
+
   type,
   title,
   subtitle,
   imageUrl,
-  imdbRating,
-  starRating,
-  platformLogos,
-  genres,
-  releaseYear,
-}) => {
-  // Determine the appropriate media type icon
-  const MediaTypeIcon = MediaTypeIcons[type] || Tv;
-
+  rating,
+  votes,
+  tags,
+  stats,
+}) {
   return (
-    <div className="group relative max-w-sm w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl border border-gray-200">
-      {/* Media Type Badge - More Prominent */}
-      <div className="absolute top-3 left-3 z-10">
-        <div className="bg-primary/70 text-white p-2 rounded-lg shadow-md transform transition-transform duration-300 group-hover:scale-105">
-          <MediaTypeIcon className="w-6 h-6 stroke-[1.5]" />
-        </div>
-      </div>
-
-      {/* Main Image Container */}
-      <div className="relative overflow-hidden">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-
-        {/* Media-Specific Overlays */}
-        {type === 'game' && platformLogos && (
-          <div className="absolute top-3 right-3 flex space-x-2">
-            {platformLogos.map((logo, index) => (
-              <img 
-                key={index} 
-                src={logo} 
-                alt="Platform" 
-                className="w-7 h-7 bg-white/70 rounded-full p-1"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="w-full max-w-sm mx-auto overflow-hidden shadow-2xl h-[460px] rounded-lg">
+        <div className="relative p-0">
+          <motion.img
+            src={imageUrl}
+            alt={title}
+            className="w-full h-48 object-cover"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          />
+          <div className="absolute top-2 left-2 flex gap-2">
+            {tags.map((tag, index) => (
+              <Badge
+                key={tag}
+                text={tag}
+                color={index === 1 ? "info" : "success"}
+                className={`${tagColors[type][index]} text-white`}
               />
             ))}
           </div>
-        )}
-
-        {/* Ratings Overlay */}
-        <div className="absolute bottom-3 right-3 flex items-center space-x-1">
-          {type === 'movie' && imdbRating && (
-            <div className="bg-blue-500 text-black px-3 py-1 rounded-md flex items-center font-bold">
-              IMDb: {imdbRating}
-            </div>
-          )}
-          {(type === 'anime' || type === 'game') && starRating && (
-            <div className="bg-yellow-500 text-black px-3 py-1 rounded-md flex items-center font-bold">
-              <Star className="w-5 h-5 mr-1 text-yellow-600 stroke-[1.5]" />
-              {starRating}/10
-            </div>
-          )}
         </div>
-      </div>
+        <div className="p-4 space-y-8">
+          <div>
+            <h2 className="text-2xl font-bold text-center mb-2">{title}</h2>
+            <p className="text-sm text-gray-500 text-center mb-4">{subtitle}</p>
+            <div className="flex justify-between items-center mb-4">
+              <div className="text-green-500 font-bold">
+                {rating}% {ratingIcons[type]}
+              </div>
+              <div className="text-sm text-gray-500">
+                {votes.toLocaleString()} Votes
+              </div>
+            </div>
+          </div>
 
-      {/* Card Details */}
-      <div className="p-4 bg-gray-50">
-        <div className="flex justify-between items-start">
-          <div className="w-full">
-            <h3 className="text-xl font-bold text-gray-800 truncate">
-              {title}
-            </h3>
-            <p className="text-sm text-gray-600 mt-1 truncate">
-              {subtitle || genres?.join(' • ') || 'No additional info'}
-            </p>
-            {releaseYear && (
-              <span className="text-xs text-gray-500 mt-1 block truncate">
-                Released: {releaseYear}
-              </span>
-            )}
+          <div className="flex w-full justify-between gap-2">
+            <div className="flex items-center">
+              <div className="flex flex-col">
+                <span className="ml-2 text-sm font-bold flex gap-4 justify-start">
+                  {stats.primary.icon}
+                  {stats.primary.value.toLocaleString()}+
+                </span>
+                <span className="ml-2 text-sm flex justify-center">
+                  {stats.primary.label}
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="flex flex-col">
+                <span className="ml-2 text-sm font-bold flex gap-4 justify-start">
+                  {stats.secondary.icon}
+                  {stats.secondary.value.toLocaleString()}
+                </span>
+                <span className="ml-2 text-sm flex justify-center">
+                  {stats.secondary.label}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Add to Profile Button */}
-        <button className="mt-4 w-full bg-blue-500 text-white py-2 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500">
-          Add to Profile
-        </button>
+        <div className="p-4 w-full">
+          <Button className="w-full relative" variant={"success"}>
+            {ctaLabels[type]}
+            <motion.div
+              className="absolute right-2"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+            >
+              <CursorClick className="w-4 h-4" />
+            </motion.div>
+          </Button>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
-};
+}
 
 Card.propTypes = {
-  type: PropTypes.oneOf(['game', 'movie', 'anime']).isRequired,
+  type: PropTypes.oneOf(["game", "movie", "anime"]).isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
-  imdbRating: PropTypes.number,
-  starRating: PropTypes.number,
-  platformLogos: PropTypes.arrayOf(PropTypes.string),
-  genres: PropTypes.arrayOf(PropTypes.string),
-  releaseYear: PropTypes.number,
+  rating: PropTypes.number.isRequired,
+  votes: PropTypes.number.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  stats: PropTypes.shape({
+    primary: PropTypes.shape({
+      icon: PropTypes.node,
+      value: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
+    secondary: PropTypes.shape({
+      icon: PropTypes.node,
+      value: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
-
-Card.defaultProps = {
-  subtitle: '',
-  imdbRating: null,
-  starRating: null,
-  platformLogos: [],
-  genres: [],
-  releaseYear: null,
-};
-
-export default Card;
