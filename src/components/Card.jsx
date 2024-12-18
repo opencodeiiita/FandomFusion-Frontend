@@ -1,14 +1,18 @@
+
 import React from "react";
 import PropTypes from "prop-types";
 import { FaStar, FaUserAlt, FaPlayCircle, FaEye, FaTag, FaThumbsUp, FaCommentDots } from "react-icons/fa"; // Importing icons
 import Button from "./Button";
 
+
 const Card = ({
   type,
   title,
   subtitle,
+
   tags,
   genres,
+
   imageUrl,
   imdbRating,
   starRating,
@@ -129,10 +133,12 @@ const Card = ({
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
 };
+
 
 // Prop Validation
 Card.propTypes = {
@@ -145,6 +151,7 @@ Card.propTypes = {
   imdbRating: PropTypes.number,
   starRating: PropTypes.number,
   platformLogos: PropTypes.arrayOf(PropTypes.string),
+
   views: PropTypes.number,
   players: PropTypes.number,
   votes: PropTypes.number, // New: Votes section
