@@ -1,33 +1,24 @@
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
 	content: [
-	  "./index.html",
-	  "./src/**/*.{js,ts,jsx,tsx}",
+	  "./src/**/*.{js,jsx,ts,tsx}", // Update to your project's file paths
+
 	],
 	theme: {
 	  extend: {
 		colors: {
-		  // Dark Theme Color Palette
-		  primary: '#3100D2', // Bluish color for primary
-        accent: '#4FD1C5', // Teal accent
-        background: '#FFFFFF', // White background
-        'card-dark': '#F3F4F6', // Light gray card background
-        'card-dark-secondary': '#F9FAFB', // Slightly lighter secondary background
-        text: {
-          primary: '#1F2937', // Dark gray for primary text
-          secondary: '#4B5563', // Slightly lighter gray for secondary text
-          tertiary: '#6B7280',// Tertiary Text
-		  },
+		  primary: "#1C1C1E", // Replace with colors from the Figma file
+		  secondary: "#2C2C2E",
+		  accent: "#FFD700", // Accent color for ratings, etc.
+		  textPrimary: "#FFFFFF",
+		  textSecondary: "#A1A1AA",
+		  buttonBg: "#6366F1",
+		  buttonHover: "#4F46E5",
 		},
 		fontFamily: {
-		  display: ['Inter', 'system-ui', 'sans-serif'],
-		  sans: ['Inter', 'system-ui', 'sans-serif'],
-		},
-		boxShadow: {
-		  'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
-		  '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+		  sans: ['"Roboto"', "sans-serif"], // Replace with font from the Figma file
 		},
 	  },
 	},
-	plugins: [], // Removed line-clamp plugin
+	plugins: [],
   };
