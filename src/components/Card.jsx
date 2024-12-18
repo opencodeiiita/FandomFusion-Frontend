@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import {
@@ -28,6 +29,7 @@ const ctaLabels = {
 };
 
 export function Card({
+
   type,
   title,
   subtitle,
