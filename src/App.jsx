@@ -1,8 +1,26 @@
 import { Eye, Play, Tv, Users } from "lucide-react";
-import "./App.css";
 import { Card } from "./components/Card";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import NotFound from "./pages/404.jsx";
+import Contributors from "./pages/Contributors.jsx";
 
-function App() {
+const App = () => {
+  return (
+    <Router>
+      {/* Main routes defined here */}
+      <Routes>
+        <Route path="/" element={<MyCards />} /> {/* Corrected component name */}
+        <Route path="/contributors" element={<Contributors />} />
+        {/* 404 page */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
+
+function MyCards() {
   return (
     <>
       <div className="flex justify-center items-center h-screen">
@@ -17,12 +35,12 @@ function App() {
             tags={["Trending", "Best in Asia"]}
             stats={{
               primary: {
-                icon: <Users key="users" className="w-4 h-4" />,
+                icon: <Users className="w-4 h-4" />,
                 label: "Active Players",
                 value: 2500,
               },
               secondary: {
-                icon: <Play key="play" className="w-4 h-4" />,
+                icon: <Play className="w-4 h-4" />,
                 label: "Total Plays",
                 value: 8400000,
               },
@@ -38,12 +56,12 @@ function App() {
             tags={["Top 5 IMDB", "Critics' Pick"]}
             stats={{
               primary: {
-                icon: <Users key="users" className="w-4 h-4" />,
+                icon: <Users className="w-4 h-4" />,
                 label: "Currently Watching",
                 value: 4100,
               },
               secondary: {
-                icon: <Eye key="eye" className="w-4 h-4" />,
+                icon: <Eye className="w-4 h-4" />,
                 label: "Total Views",
                 value: 15000000,
               },
@@ -59,12 +77,12 @@ function App() {
             tags={["Top Rated", "Fan Favorite"]}
             stats={{
               primary: {
-                icon: <Tv key="tv" className="w-4 h-4" />,
+                icon: <Tv className="w-4 h-4" />,
                 label: "Episodes Available",
                 value: 24,
               },
               secondary: {
-                icon: <Eye key="eye" className="w-4 h-4" />,
+                icon: <Eye className="w-4 h-4" />,
                 label: "Total Views",
                 value: 18500000,
               },
