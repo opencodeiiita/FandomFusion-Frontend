@@ -4,10 +4,6 @@ import {
   Star,
   Popcorn,
   Sparkles,
-  Users,
-  Play,
-  Eye,
-  Tv,
   MousePointerClickIcon as CursorClick,
 } from "lucide-react";
 import { Badge } from "./Badge";
@@ -19,12 +15,6 @@ const tagColors = {
   anime: ["bg-red-500", "bg-green-500"],
 };
 
-const tagLabels = {
-  game: ["Trending", "Editors' Choice"],
-  movie: ["Now Streaming", "Critics' Pick"],
-  anime: ["Top Rated", "Fan Favorite"],
-};
-
 const ratingIcons = {
   game: <Star className="inline-block w-4 h-4 text-yellow-400" />,
   movie: <Popcorn className="inline-block w-4 h-4 text-yellow-400" />,
@@ -32,24 +22,9 @@ const ratingIcons = {
 };
 
 const ctaLabels = {
-  game: "Play Now",
-  movie: "Watch Now",
-  anime: "Start Watching",
-};
-
-const statIcons = {
-  game: [
-    <Users key="users" className="w-4 h-4" />,
-    <Play key="play" className="w-4 h-4" />,
-  ],
-  movie: [
-    <Users key="users" className="w-4 h-4" />,
-    <Eye key="eye" className="w-4 h-4" />,
-  ],
-  anime: [
-    <Tv key="tv" className="w-4 h-4" />,
-    <Eye key="eye" className="w-4 h-4" />,
-  ],
+  game: "Connect with Fellow Gamers",
+  movie: "Join Our Movie Buffs Chat",
+  anime: "Join the Otaku Family!",
 };
 
 export function Card({
@@ -81,7 +56,7 @@ export function Card({
             {tags.map((tag, index) => (
               <Badge
                 key={tag}
-                text={tagLabels[type][index]}
+                text={tag}
                 color={index === 1 ? "info" : "success"}
                 className={`${tagColors[type][index]} text-white`}
               />
@@ -106,8 +81,8 @@ export function Card({
             <div className="flex items-center">
               <div className="flex flex-col">
                 <span className="ml-2 text-sm font-bold flex gap-4 justify-start">
-                  {statIcons[type][0]}
-                  {stats.primary.value.toLocaleString()}
+                  {stats.primary.icon}
+                  {stats.primary.value.toLocaleString()}+
                 </span>
                 <span className="ml-2 text-sm flex justify-center">
                   {stats.primary.label}
@@ -117,7 +92,7 @@ export function Card({
             <div className="flex items-center">
               <div className="flex flex-col">
                 <span className="ml-2 text-sm font-bold flex gap-4 justify-start">
-                  {statIcons[type][1]}
+                  {stats.secondary.icon}
                   {stats.secondary.value.toLocaleString()}
                 </span>
                 <span className="ml-2 text-sm flex justify-center">
@@ -154,10 +129,12 @@ Card.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   stats: PropTypes.shape({
     primary: PropTypes.shape({
+      icon: PropTypes.node,
       value: PropTypes.number.isRequired,
       label: PropTypes.string.isRequired,
     }).isRequired,
     secondary: PropTypes.shape({
+      icon: PropTypes.node,
       value: PropTypes.number.isRequired,
       label: PropTypes.string.isRequired,
     }).isRequired,

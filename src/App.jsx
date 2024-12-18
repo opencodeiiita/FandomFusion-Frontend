@@ -1,3 +1,4 @@
+import { Eye, Play, Tv, Users } from "lucide-react";
 import "./App.css";
 import { Card } from "./components/Card";
 
@@ -13,10 +14,18 @@ function App() {
             imageUrl="https://c4.wallpaperflare.com/wallpaper/219/629/87/red-dead-redemption-2-red-dead-redemption-hd-wallpaper-preview.jpg"
             rating={92}
             votes={10000}
-            tags={["Trending", "Editors' Choice"]}
+            tags={["Trending", "Best in Asia"]}
             stats={{
-              primary: { label: "Players Online", value: 2500 },
-              secondary: { label: "Total Plays", value: 8400000 },
+              primary: {
+                icon: <Users key="users" className="w-4 h-4" />,
+                label: "Active Players",
+                value: 2500,
+              },
+              secondary: {
+                icon: <Play key="play" className="w-4 h-4" />,
+                label: "Total Plays",
+                value: 8400000,
+              },
             }}
           />
           <Card
@@ -26,10 +35,18 @@ function App() {
             imageUrl="https://wallpapercave.com/wp/msi4htu.jpg"
             rating={88}
             votes={12000}
-            tags={["Now Streaming", "Critics' Pick"]}
+            tags={["Top 5 IMDB", "Critics' Pick"]}
             stats={{
-              primary: { label: "Currently Watching", value: 4100 },
-              secondary: { label: "Total Views", value: 15000000 },
+              primary: {
+                icon: <Users key="users" className="w-4 h-4" />,
+                label: "Currently Watching",
+                value: 4100,
+              },
+              secondary: {
+                icon: <Eye key="eye" className="w-4 h-4" />,
+                label: "Total Views",
+                value: 15000000,
+              },
             }}
           />
           <Card
@@ -41,8 +58,16 @@ function App() {
             votes={5000}
             tags={["Top Rated", "Fan Favorite"]}
             stats={{
-              primary: { label: "Episodes Available", value: 24 },
-              secondary: { label: "Total Views", value: 18500000 },
+              primary: {
+                icon: <Tv key="tv" className="w-4 h-4" />,
+                label: "Episodes Available",
+                value: 24,
+              },
+              secondary: {
+                icon: <Eye key="eye" className="w-4 h-4" />,
+                label: "Total Views",
+                value: 18500000,
+              },
             }}
           />
         </div>
