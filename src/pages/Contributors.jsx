@@ -128,8 +128,48 @@ const contributors = [
 		github: "https://github.com/Atharwa23",
 		avatar: "https://avatars.githubusercontent.com/u/149394219?s=400&v=4",
 	},
-
-
+	{
+		name: "Saurabh Kashyap",
+		github: "https://github.com/saurabhk9919",
+		avatar: "https://avatars.githubusercontent.com/u/153047425?v=4",
+	
+	},
+	{
+		name: "Sameer Reddy",
+		github: "https://github.com/kenma-w",
+		avatar: "https://avatars.githubusercontent.com/u/152846901?v=4",
+	},
+	{
+		name: "Abbhilash Maurya",
+		github: "https://github.com/Abhilash-0322",
+		avater: "https://avatars.githubusercontent.com/u/136215541?v=4"
+	},
+	{
+		name: "Suyash Kumar",
+		github: "https://github.com/Skr-suyash",
+		avater: "https://avatars.githubusercontent.com/u/43753331?v=4"
+	},
+	{
+		name: "Suvanwita Das",
+		github: "https://github.com/suvanwita",
+		avatar: "https://avatars.githubusercontent.com/u/65910761?v=4"
+	},
+	{
+		name: "Pratham Jain",
+		github: "https://github.com/PrathamJain2601",
+		avatar: "https://avatars.githubusercontent.com/u/128016490?v=4"
+	},
+	{
+		name: "Abdul Azeem Ansari",
+		github: "https://github.com/23abdul23",
+		avatar: "https://avatars.githubusercontent.com/u/137088018?s=400&u=bd84bfad5ce7e8e1a82951b9ec7a0fc047cfe3c7&v=4"
+	},
+	{
+		name: "Kinshuk Bahl",
+		github: "https://github.com/Kinshukk098",
+		avatar: "https://avatars.githubusercontent.com/u/180995896?v=4"
+	}
+	
 	// Add more contributors here
 ];
 

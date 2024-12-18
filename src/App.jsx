@@ -1,14 +1,20 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
-function App() {
+import NotFound from "./pages/404.jsx";
+import Contributors from "./pages/Contributors.jsx";
+const App = () => {
 	return (
-		<>
-			<div>
-				<p>Hello World!</p>
-			</div>
-		</>
+		<Router>
+			{/* Main routes defined here */}
+			<Routes>
+				<Route path="/" element={<h1>Hello world</h1>} />{" "}
+				{/* TODO: Change this with actual Home page */}
+				<Route path="/contributors" element={<Contributors />} />
+				{/* 404 page */}
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</Router>
 	);
-}
-
+};
 export default App;
