@@ -49,7 +49,7 @@ const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdb
             className="h-[390px] rounded-r-lg"
             src={imageUrl}
           />
-          <div className="absolute inset-0 bg-[rgba(0,244,170,0.4)] flex items-center justify-center shadow-md">
+          <div className="absolute inset-0 flex items-center justify-center shadow-md">
             <a
               href="https://www.imdb.com/title/tt4912910/"
               target="_blank"
