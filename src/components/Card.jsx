@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faDownload, faThumbsUp, faStar, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
-const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdbRating}) => {
+const Card = ({type,title,year,genre,duration,description,aboutUrl,imageUrl,rating}) => {
   return (
     <div>
       <div className="w-[760px] h-[390px] mx-auto my-12 flex max-w-[770px] text-white bg-gradient-to-r from-[#92FE9D] to-[#00C9FF] rounded-lg">
@@ -15,13 +15,13 @@ const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdb
               </p>
               <p className="font-bold">{year}</p>
               <p className="font-bold">{genre}</p>
-              <p className="font-bold">{duration}</p>
+              {type!=="Game" && <p className="font-bold">{duration}</p>}
             </div>
             <p className="text-sm leading-relaxed mt-4">
               {description}
             </p>
             <a
-              href={movieURL}
+              href={aboutUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-cyan-700 underline mt-2"
@@ -29,14 +29,17 @@ const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdb
               Read More
             </a>
             <div className="flex gap-4 mt-6">
+              {
+                type=="Movie" &&
               <button className="bg-[#92FE9D] text-black px-6 py-3 rounded-lg shadow-lg transform transition-transform hover:scale-110">
-              <FontAwesomeIcon icon={faPlay} className="mr-2" /> SEE TRAILER
+              <FontAwesomeIcon icon={faPlay} className="mr-2" /> Watch Trailer
+              </button>
+              }
+              <button className="bg-[#92FE9D] text-black px-6 py-3 rounded-lg shadow-lg transform transition-transform hover:scale-110">
+              <FontAwesomeIcon icon={faDownload} className="mr-2" /> Download
               </button>
               <button className="bg-[#92FE9D] text-black px-6 py-3 rounded-lg shadow-lg transform transition-transform hover:scale-110">
-              <FontAwesomeIcon icon={faDownload} className="mr-2" /> DOWNLOAD
-              </button>
-              <button className="bg-[#92FE9D] text-black px-6 py-3 rounded-lg shadow-lg transform transition-transform hover:scale-110">
-              <FontAwesomeIcon icon={faThumbsUp} className="mr-2" /> {imdbRating}
+              <FontAwesomeIcon icon={faThumbsUp} className="mr-2" /> {rating}
               </button>
               <button className="bg-[#92FE9D] text-black px-6 py-3 rounded-lg shadow-lg transform transition-transform hover:scale-110">
               <FontAwesomeIcon icon={faStar} />
@@ -46,7 +49,7 @@ const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdb
         </div>
         <div className=" relative">
           <img
-            className="h-[390px] rounded-r-lg"
+            className="h-[390px] rounded-r-lg w-96"
             src={imageUrl}
           />
           <div className="absolute inset-0 flex items-center justify-center shadow-md">
@@ -55,7 +58,7 @@ const Card = ({type,title,year,genre,duration,description,movieURL,imageUrl,imdb
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#255] text-[160px] hover:text-aqua">
-                <FontAwesomeIcon icon={faPlayCircle} className="animate-bounce" />
+                <FontAwesomeIcon icon={faPlayCircle} className="animate-bounce w-12" />
             </a>
           </div>
         </div>
