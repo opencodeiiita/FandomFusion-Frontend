@@ -10,9 +10,6 @@ return (
 		  {/* Main routes defined here */}
 		  <Routes>
 			<Route path="/" element={<Home />} />
-			{ <Route path="/register" element={<Register />} /> }
-			{ <Route path="/profile" element={<Profile />} /> }
-			{ <Route path="/settings" element={<Settings />} /> }
 		  </Routes>
 		  <Route path="*" element={NotFound}/>
 		</div>
