@@ -1,5 +1,7 @@
+
 import React from "react";
 import PropTypes from "prop-types";
+
 
 const Card = ({
   type,
@@ -40,6 +42,7 @@ const Card = ({
                 src={logo}
                 alt="Platform Logo"
                 className="w-5 h-5"
+
               />
             ))}
           </div>
@@ -76,6 +79,7 @@ const Card = ({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8l-8 8-8-8" />
           </svg>
           <span>Download Now</span>
+
         </button>
       </div>
     </div>
