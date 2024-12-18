@@ -169,6 +169,11 @@ const contributors = [
 		github: "https://github.com/Kinshukk098",
 		avatar: "https://avatars.githubusercontent.com/u/180995896?v=4"
 	}
+	{
+		name: "Shruti Agrawal",
+		github: "https://github.com/shrut2606",
+		avatar: "https://avatars.githubusercontent.com/u/149600309?s=400&v=4"
+	}
 	
 	// Add more contributors here
 ];
