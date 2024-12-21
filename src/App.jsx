@@ -1,5 +1,13 @@
 import React from 'react';
-import Card from './components/Card';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; 
+import { CSSTransition, TransitionGroup } from 'react-transition-group'; 
+import './App.css'; // Make sure your CSS file has the animation styles
+import Home from './pages/Home.jsx'; 
+import NotFound from './pages/404.jsx';
+import Auth from './pages/Auth.jsx';
+import ForgotPassword from './pages/ForgotPassword.jsx';
+import ResetPassword from './pages/ResetPassword.jsx';
+import Signup from './pages/Signup.jsx';
 
 const App = () => {
   // Sample media data with more detailed information
@@ -36,9 +44,20 @@ const App = () => {
       releaseYear: 2013
     }
   ];
+  return (
+    <Router>
+      <MainContent />
+    </Router>
+  );
+};
+
+// Main content where the routes and animations will occur
+const MainContent = () => {
+  const location = useLocation(); // Correct usage inside Router
+  console.log('Current path:', location.pathname);
 
   return (
-    <div className="min-h-screen bg-white p-6">
+	 /* <div className="min-h-screen bg-white p-6">
       <div className="container mx-auto">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-display text-primary mb-4">
@@ -66,6 +85,24 @@ const App = () => {
           ))}
         </div>
       </div>
+    </div>*/
+    <div className="App">
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key} // Unique key for each route change
+          timeout={300} // Duration of the transition
+          classNames="page" // Add CSS class for animations
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/Auth" element={<Auth />} />
+			<Route path='/Signup' element={<Signup/>} />
+            <Route path="/ForgotPassword" element={<ForgotPassword />} />
+            <Route path="/ResetPassword" element={<ResetPassword />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
     </div>
   );
 };
