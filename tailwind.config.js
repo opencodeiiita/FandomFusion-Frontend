@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	content: [
 	  "./index.html",
 	  "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,16 +7,15 @@ module.exports = {
 	theme: {
 	  extend: {
 		colors: {
-		  // Dark Theme Color Palette
-		  primary: '#3100D2', // Bluish color for primary
-        accent: '#4FD1C5', // Teal accent
-        background: '#FFFFFF', // White background
-        'card-dark': '#F3F4F6', // Light gray card background
-        'card-dark-secondary': '#F9FAFB', // Slightly lighter secondary background
-        text: {
-          primary: '#1F2937', // Dark gray for primary text
-          secondary: '#4B5563', // Slightly lighter gray for secondary text
-          tertiary: '#6B7280',// Tertiary Text
+		  primary: '#3100D2',
+		  accent: '#4FD1C5',
+		  background: '#FFFFFF',
+		  'card-dark': '#F3F4F6',
+		  'card-dark-secondary': '#F9FAFB',
+		  text: {
+			primary: '#1F2937',
+			secondary: '#4B5563',
+			tertiary: '#6B7280',
 		  },
 		},
 		fontFamily: {
@@ -29,5 +28,6 @@ module.exports = {
 		},
 	  },
 	},
-	plugins: [], // Removed line-clamp plugin
+	plugins: [],
   };
+  
