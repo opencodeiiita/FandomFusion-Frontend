@@ -38,7 +38,7 @@ const Sidebar = () => {
           </Link>
         </li>
       </ul>
-      
+
       {/* Logout Button */}
       {/* <div className="absolute bottom-4 left-4 w-full">
         <button className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">
@@ -49,4 +49,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar
