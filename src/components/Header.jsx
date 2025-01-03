@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaUserCircle, FaUserAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaBars, FaUserCircle, FaUserAlt, FaSignOutAlt, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -12,6 +12,10 @@ const Header = ({ toggleSidebar }) => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/auth");
+  };
+
+  const handleSearchNavigate = () => {
+    navigate("/search");
   };
 
   return (
@@ -27,6 +31,15 @@ const Header = ({ toggleSidebar }) => {
       <h1 className="text-2xl font-bold text-center flex-grow">
         Fandom Fusion
       </h1>
+
+      {/* Search Icon */}
+      <button
+        aria-label="Search"
+        onClick={handleSearchNavigate}
+        className="flex items-center space-x-2 mr-12"
+      >
+        <FaSearch size={24} />
+      </button>
 
       {/* Profile Dropdown */}
       <div className="relative flex-none">
