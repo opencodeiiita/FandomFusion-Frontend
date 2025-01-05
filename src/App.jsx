@@ -9,6 +9,7 @@ import ForgotPassword from './pages/ForgotPassword.jsx';
 import ResetPassword from './pages/ResetPassword.jsx';
 import Signup from './pages/Signup.jsx';
 import LandingPage from './pages/LandingPage.jsx'; // Assuming you want a landing page
+import Search from './pages/SearchPage.jsx';
 
 const App = () => {
   // Simulate logging in by setting a token in localStorage
@@ -49,6 +50,7 @@ const MainContent = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/search" element={<Search />} />
           
           {/* Protected Route */}
           <Route path="/" element={localStorage.getItem('authToken') ? <Home /> : <LandingPage />} />
