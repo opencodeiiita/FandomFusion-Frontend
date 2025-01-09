@@ -43,6 +43,7 @@ const Auth = () => {
         login(user, token); // Save user and token in context
         toast.success("Login successful!"); // Success toast
         console.log(user,token);
+        window.location.href = '/';
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed. Please try again."); // Error toast

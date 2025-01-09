@@ -10,10 +10,10 @@ export const AuthProvider = ({ children }) => {
 
   // Load user data and token from localStorage on initial render
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const authToken = localStorage.getItem('authToken');
     const storedUser = localStorage.getItem('user');
 
-    if (token && storedUser) {
+    if (authToken && storedUser) {
       setUser(JSON.parse(storedUser));
       setIsLoggedIn(true);
     }
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   // Function to log in and update context
   const login = (userData, token) => {
-    localStorage.setItem('token', token);
+    localStorage.setItem('authToken', token);
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
     setIsLoggedIn(true);
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   // Function to log out and clear context
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     localStorage.removeItem('user');
     setUser(null);
     setIsLoggedIn(false);
