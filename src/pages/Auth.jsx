@@ -1,33 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { validateEmail, validatePassword } from '../utils/utils'; // Import validation functions
+import axios from 'axios';
+import { AuthContext } from '../context/authContext';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
 
 const Auth = () => {
-  const [email, setEmail] = useState('');
+  const { login } = useContext(AuthContext); // Access login function from context
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate the form
     const newErrors = {};
-    
-    const emailError = validateEmail(email);
-    if (emailError) newErrors.email = emailError;
 
+    // Validate email
+    // const emailError = validateEmail(email);
+    // if (emailError) newErrors.email = emailError;
+
+    // Validate password
     const passwordError = validatePassword(password);
     if (passwordError) newErrors.password = passwordError;
 
-    // If there are errors, set them in state
+    // If there are errors, set them
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      // Proceed with form submission if no errors (e.g., API call or routing)
-      console.log('Form submitted');
+      return;
+    }
+
+    try {
+      const response = await axios.post(`http://localhost:4000/api/v1/auth/login`, {
+        password,
+        username
+      });
+
+      if (response.data.status === 'Ok') {
+        const user = response.data.user; // Extract user and token
+        const token = response.data.user.token;
+        login(user, token); // Save user and token in context
+        toast.success("Login successful!"); // Success toast
+        console.log(user,token);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Login failed. Please try again."); // Error toast
+      console.error('Error logging in:', error.response?.data || error.message);
     }
   };
+
 
   return (
     <div className="h-screen w-screen flex justify-center items-center bg-slate-800">
@@ -37,19 +59,22 @@ const Auth = () => {
           <p className="text-center text-zinc-600 dark:text-zinc-400 mt-3">We missed you, sign in to continue.</p>
           
           <div className="mt-10">
-            <div className="relative">
-              <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="signin-email">Email</label>
-              <input
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="block w-full px-4 py-3 mt-2 text-zinc-800 bg-white border-2 rounded-lg dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-blue-400"
-                name="email"
-                id="signin-email"
-                type="email"
-              />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-            </div>
+          <div className="mt-10">
+                <div className="relative">
+                  <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="signin-username">Username</label>
+                  <input
+                    placeholder="yourusername"
+                    value={username} // Ensure `username` state is being used
+                    onChange={(e) => setUsername(e.target.value)} // Update the `username` state
+                    className="block w-full px-4 py-3 mt-2 text-zinc-800 bg-white border-2 rounded-lg dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-blue-400"
+                    name="username"
+                    id="signin-username"
+                    type="text"
+                  />
+                  {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>} {/* Display error if username validation fails */}
+                </div>
+              </div>
+
             
             <div className="mt-6">
               <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="signin-password">Password</label>

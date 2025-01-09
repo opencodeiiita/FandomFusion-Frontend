@@ -10,6 +10,9 @@ import ResetPassword from './pages/ResetPassword.jsx';
 import Signup from './pages/Signup.jsx';
 import LandingPage from './pages/LandingPage.jsx'; // Assuming you want a landing page
 import Search from './pages/SearchPage.jsx';
+import { AuthProvider } from './context/authContext.jsx';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   // Simulate logging in by setting a token in localStorage
@@ -21,9 +24,12 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <MainContent />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <MainContent />
+        <ToastContainer/>
+      </Router>
+    </AuthProvider>
   );
 };
 
