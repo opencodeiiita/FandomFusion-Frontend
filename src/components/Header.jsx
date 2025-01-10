@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FaBars, FaUserCircle, FaUserAlt, FaSignOutAlt, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { AuthContext } from "../context/authContext"; // Import the AuthContext
 
 const Header = ({ toggleSidebar }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const { user, logout } = useContext(AuthContext); // Access user and logout from context
   const navigate = useNavigate();
 
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
+    logout(); // Call the logout function from AuthContext
     navigate("/auth");
   };
 
@@ -28,9 +30,7 @@ const Header = ({ toggleSidebar }) => {
       </div>
 
       {/* Header Title */}
-      <h1 className="text-2xl font-bold text-center flex-grow">
-        Fandom Fusion
-      </h1>
+      <h1 className="text-2xl font-bold text-center flex-grow">Fandom Fusion</h1>
 
       {/* Search Icon */}
       <button
@@ -62,7 +62,7 @@ const Header = ({ toggleSidebar }) => {
               <ul>
                 <li className="flex items-center px-4 py-4 hover:bg-blue-500 hover:text-white cursor-pointer">
                   <FaUserAlt className="mr-4" size={16} />
-                  Profile
+                  {user ? user.username : "Profile"} {/* Display username or default */}
                 </li>
                 <li
                   className="flex items-center px-4 py-4 hover:bg-blue-500 hover:text-white cursor-pointer"

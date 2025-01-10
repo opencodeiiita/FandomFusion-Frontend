@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { validateEmail, validatePassword, validateConfirmPassword } from '../utils/utils_signup'; // Import validation functions
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
+import { text } from 'framer-motion/client';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
+  const [username,setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Validate the form
@@ -34,7 +39,27 @@ const Signup = () => {
       // Proceed with form submission if no errors (e.g., API call or routing)
       console.log('Form submitted');
     }
-  };
+
+    try {
+
+      const response = await axios.post(`http://localhost:4000/api/v1/auth/register`, {
+        email,
+        username,
+        password,
+        confirmPassword
+      });
+
+      console.log(response.data);
+      // Handle success response
+      if(response.data.status === "Ok"){
+        toast.success("Signup successful! You can now log in."); // Success toast
+        console.log("Signup Succcessfull");
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Signup failed. Please try again."); // Error toast
+      console.error(error);
+    }
+      }
 
   return (
     <div className='h-screen w-screen flex justify-center items-center bg-slate-800'>
@@ -55,6 +80,19 @@ const Signup = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            </div>
+            <div className="mt-6">
+              <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="signup-username">Username</label>
+              <input
+                placeholder="yourusername"
+                className="block w-full px-4 py-3 mt-2 text-zinc-800 bg-white border-2 rounded-lg dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-blue-400"
+                name="username"
+                id="signup-username"
+                type="text"
+                value={username} // Use the correct state variable
+                onChange={(e) => setUsername(e.target.value)} // Update the username state
+              />
+              {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>} {/* Display the appropriate error */}
             </div>
             <div className="mt-6">
               <label className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200" htmlFor="signup-password">Password</label>
@@ -101,5 +139,6 @@ const Signup = () => {
     </div>
   );
 };
+
 
 export default Signup;
