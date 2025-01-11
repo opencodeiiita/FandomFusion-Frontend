@@ -51,7 +51,39 @@
             "why": ""
           }
         ]
+      },
+      {
+        "contributor": "Snehal Gupta",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "62795",
+            "name": "Tomodachi Game",
+            "why": "It is thrilling, suspenseful, full of psychological twists and drama."
+          },
+          {
+            "type": "anime",
+            "id": "37520",
+            "name": "Dororo",
+            "why": ""
+          },
+          {
+            "type": "movie",
+            "id": "19950",
+            "name": "13B",
+            "why": "It is suspenseful with mystery, horror, and psychological twists and was way ahead of its time at the time of release"
+          },
+          
+          {
+            "type": "game",
+            "id": "750298",
+            "name": "Iron Lung",
+            "why": "It  is tense, atmospheric, with horror, mystery, and survival elements"
+          }
+        ]
       }
     ]
   }
+    
   
+ 
