@@ -1,0 +1,57 @@
+{
+    "recommendations": [
+      {
+        "contributor": "Bhavya Gupta (aka Gamin8ing)",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "457",
+            "name": "Mushishi",
+            "why": ""
+          },
+          {
+            "type": "movie",
+            "id": "64690",
+            "name": "Drive",
+            "why": "This movie speaks through its silence and the music. It's a must watch for anyone who loves a good story."
+          },
+          {
+            "type": "movie",
+            "id": "303991",
+            "name": "Demolition",
+            "why": ""
+          },
+          {
+            "type": "game",
+            "id": "494379",
+            "name": "The Invincible",
+            "why": "Beatifully crafted world with a unique story."
+          }
+        ]
+      },
+      {
+        "contributor": "Contributor's Name",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "",
+            "name": "",
+            "why": ""
+          },
+          {
+            "type": "movie",
+            "id": "",
+            "name": "",
+            "why": ""
+          },
+          {
+            "type": "game",
+            "id": "",
+            "name": "",
+            "why": ""
+          }
+        ]
+      }
+    ]
+  }
+  
