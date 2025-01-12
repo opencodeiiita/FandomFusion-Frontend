@@ -81,6 +81,30 @@
             "why": "It  is tense, atmospheric, with horror, mystery, and survival elements"
           }
         ]
+      },
+        {
+        "contributor": "Sharuka",
+        "entries": [
+          {
+             "type": "anime",
+            "id": "457",
+            "name": "Mushishi",
+            "why": ""
+          },
+          {
+            "type": "movie",
+            "id": "303991",
+            "name": "Demolition",
+            "why": ""
+          },
+          
+          {
+            "type": "game",
+            "id": "750298",
+            "name": "Iron Lung",
+            "why": "It  is tense, atmospheric, with horror, mystery, and survival elements"
+          }
+        ]
       }
     ]
   }
