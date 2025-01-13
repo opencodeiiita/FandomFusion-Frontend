@@ -1,79 +1,131 @@
-import { useState } from "react";
-import { FiSearch } from "react-icons/fi";
+import React, { useState } from 'react';
+import { Search, Grid, List } from 'lucide-react';
+import SearchResults from '../components/SearchResults';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-const Search = () => {
-  const [query, setQuery] = useState("");
+const SearchPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState('all');
+  const [isGridView, setIsGridView] = useState(true);
+  const [searchResults, setSearchResults] = useState({ books: [], movies: [], games: [] });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSearch = (e) => {
-    setQuery(e.target.value);
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!searchTerm.trim()) return;
+
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 1000);
+
+    try {
+      // In a real application, replace this with actual API calls
+      const mockResults = {
+        books: [
+          { id: 'b1', title: 'The Great Gatsby', image: '/placeholder.svg?height=200&width=150', rating: 4.5, type: 'book' },
+          { id: 'b2', title: 'To Kill a Mockingbird', image: '/placeholder.svg?height=200&width=150', rating: 4.8, type: 'book' },
+        ],
+        movies: [
+          { id: 'm1', title: 'The Shawshank Redemption', image: '/placeholder.svg?height=200&width=150', rating: 4.9, type: 'movie' },
+          { id: 'm2', title: 'The Godfather', image: '/placeholder.svg?height=200&width=150', rating: 4.7, type: 'movie' },
+        ],
+        games: [
+          { id: 'g1', title: 'The Legend of Zelda: Breath of the Wild', image: '/placeholder.svg?height=200&width=150', rating: 4.9, type: 'game' },
+          { id: 'g2', title: 'Red Dead Redemption 2', image: '/placeholder.svg?height=200&width=150', rating: 4.7, type: 'game' },
+        ],
+      };
+
+      setSearchResults(mockResults);
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  const filteredResults = activeTab === 'all'
+    ? [...searchResults.books, ...searchResults.movies, ...searchResults.games]
+    : searchResults[activeTab];
+
   return (
-    <div className="p-6 bg-blue-50 min-h-screen">
-      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        {/* Search Bar */}
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={query}
-            onChange={handleSearch}
-            className="w-full p-4 pl-12 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
-          
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-            <FiSearch className="text-blue-500 text-xl" />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-5xl font-extrabold mb-12 text-center text-black dark:text-white">
+          Search Your Fandom
+        </h1>
+        
+        <form onSubmit={handleSearch} className="mb-12">
+          <div className="flex items-center space-x-2">
+            <Input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search for books, movies, or games..."
+              className="flex-grow"
+            />
+            <Button type="submit" disabled={isLoading} variant="outline" size="icon">
+              {isLoading ? (
+                <span className="animate-spin">🔄</span>
+              ) : (
+                <Search className="h-4 w-4" />
+              )}
+              <span className="sr-only">Search</span>
+            </Button>
+          </div>
+        </form>
+
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0">
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList>
+              <TabsTrigger value="all">All</TabsTrigger>
+              <TabsTrigger value="books">Books</TabsTrigger>
+              <TabsTrigger value="movies">Movies</TabsTrigger>
+              <TabsTrigger value="games">Games</TabsTrigger>
+            </TabsList>
+          </Tabs>
+
+          <div className="flex items-center space-x-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setIsGridView(true)}
+              className={isGridView ? 'bg-gray-200 dark:bg-gray-700' : ''}
+            >
+              <Grid className="h-4 w-4" />
+              <span className="sr-only">Grid view</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setIsGridView(false)}
+              className={!isGridView ? 'bg-gray-200 dark:bg-gray-700' : ''}
+            >
+              <List className="h-4 w-4" />
+              <span className="sr-only">List view</span>
+            </Button>
           </div>
         </div>
 
-        {/* No Query Entered */}
-        {!query && !isLoading && (
-          <p className="text-blue-600 text-center mt-4">
-            Enter what you want to search.
-          </p>
-        )}
-
-        {/* Loading Animation */}
-        {isLoading && (
-          <div className="flex justify-center items-center mt-4">
-            <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-blue-500"></div>
-          </div>
-        )}
-
-        {/* Sections */}
-        {!isLoading && (
-          <div className="mt-6 space-y-6">
-            {/* Anime Section */}
-            <div className="group p-4 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300">
-              <h2 className="text-xl font-bold group-hover:text-white">
-                {query ? "Animes" : "Top 5 Animes"}
-              </h2>
-              <p className="text-blue-600 group-hover:text-white">No Data Found</p>
-            </div>
-
-            
-            <div className="group p-4 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300">
-              <h2 className="text-xl font-bold group-hover:text-white">
-                {query ? "Movies" : "Top 5 Movies"}
-              </h2>
-              <p className="text-blue-600 group-hover:text-white">No Data Found</p>
-            </div>
-
-            
-            <div className="group p-4 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300">
-              <h2 className="text-xl font-bold group-hover:text-white">
-                {query ? "Games" : "Top 5 Games"}
-              </h2>
-              <p className="text-blue-600 group-hover:text-white">No Data Found</p>
-            </div>
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab + (isGridView ? 'grid' : 'list')}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <SearchResults
+              results={filteredResults}
+              isGridView={isGridView}
+              isLoading={isLoading}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
 };
 
-export default Search;
+export default SearchPage;
+
