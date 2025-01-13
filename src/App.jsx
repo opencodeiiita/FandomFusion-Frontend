@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -24,6 +25,20 @@ const App = () => {
     </AuthProvider>
   );
 };
+=======
+import { useState } from "react";
+import "./App.css";
+import { Card } from "./components/Card";
+import SearchPage from "./pages/search-page";
+import { Route,Routes } from "react-router-dom";
+function App() {
+	return (
+	   <Routes>
+		 <Route path='/search' element={<SearchPage/>}></Route>
+	   </Routes>
+	);
+}
+>>>>>>> f61199e (Extend Search Functionality to Movies and Games)
 
 const MainContent = () => {
   const location = useLocation();
