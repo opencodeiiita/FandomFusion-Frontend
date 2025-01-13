@@ -81,6 +81,29 @@
             "why": "It  is tense, atmospheric, with horror, mystery, and survival elements"
           }
         ]
+      },
+      {
+        "contributor": "Kanav Agrawal",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "51836",
+            "name": "Douluo_Dalu_II__Jueshi_Tangmen",
+            "why": "It has a very good story."
+          },
+          {
+            "type": "movie",
+            "id": "204082",
+            "name": "HomeFront",
+            "why": "A very beautiful movie with thrilling, suspenseful and full of action."
+          },
+          {
+            "type": "game",
+            "id": "28395",
+            "name": "Metro-Last-Light",
+            "why": "It is an epic adventure combining gripping survival horror, exploration and tactical combat and stealth."
+          }
+        ]
       }
     ]
   }
