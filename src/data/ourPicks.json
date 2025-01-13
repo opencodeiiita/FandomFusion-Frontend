@@ -104,6 +104,29 @@
             "why": "It is an epic adventure combining gripping survival horror, exploration and tactical combat and stealth."
           }
         ]
+      },
+      {
+        "contributor": "Sanjitha S",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "48849",
+            "name": "Sunny boy",
+            "why": "beautiful story but confusing "
+          },
+          {
+            "type": "movie",
+            "id": "69597",
+            "name": "Ayirathil oruvan",
+            "why": "nice story and music but did not match the interest of audience by then"
+          },   
+          {
+            "type": "game",
+            "id": "304247",
+            "name": "A short hike",
+            "why": "due to short playtime"
+          }
+        ]
       }
     ]
   }
