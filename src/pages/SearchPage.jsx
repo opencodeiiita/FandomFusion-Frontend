@@ -7,7 +7,7 @@ const SearchPage = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [activeSection, setActiveSection] = useState("Anime"); 
+  const [activeSection, setActiveSection] = useState("Anime");
 
   const getAuthToken = () => {
     return localStorage.getItem("authToken");
@@ -30,14 +30,19 @@ const SearchPage = () => {
     }
 
     try {
-      const response = await axios.get(
-        `http://localhost:4000/api/v1/media/${activeSection.toLowerCase()}/search?q=${encodeURIComponent(query)}`,
-        {
-          headers: {
-            Authorization: `Bearer ${AUTH_TOKEN}`,
-          },
-        }
-      );
+    
+      const baseEndpoint =
+        activeSection.toLowerCase() === "anime"
+          ? `http://localhost:4000/api/v1/media/${activeSection.toLowerCase()}/search?q=${encodeURIComponent(query)}`
+          : `http://localhost:4000/api/v1/media/${activeSection.toLowerCase()}/search?search=${encodeURIComponent(query)}`;
+
+          console.log(baseEndpoint);
+
+      const response = await axios.get(baseEndpoint, {
+        headers: {
+          Authorization: `Bearer ${AUTH_TOKEN}`,
+        },
+      });
 
       if (response.data && response.data.data && response.data.data.length > 0) {
         setResults(response.data.data);
@@ -61,14 +66,14 @@ const SearchPage = () => {
     }
   };
 
-  const sections = ["Anime", "Movies", "Games"]; 
+  const sections = ["Anime", "Movie", "Game"];
 
   return (
     <div className="p-6 bg-blue-50 min-h-screen">
       <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-7">
         <h1 className="text-2xl font-bold text-center mb-4">Search Your Fandom</h1>
 
-       
+        
         <div className="flex justify-center space-x-4 mb-6">
           {sections.map((section) => (
             <button
@@ -85,7 +90,7 @@ const SearchPage = () => {
           ))}
         </div>
 
-        
+       
         <div className="flex items-center space-x-4">
           <input
             type="text"
@@ -110,31 +115,41 @@ const SearchPage = () => {
           </div>
         )}
 
-       
+        
         {error && !isLoading && (
           <p className="text-red-500 text-center mt-6">{error}</p>
         )}
-      
+
+        {/* Results */}
         {!isLoading && results.length > 0 && (
           <h2 className="text-2xl font-semibold text-gray-800 mt-6">
-            Anime results for: <span className="text-blue-600">{query}</span>
+            {activeSection} results for:{" "}
+            <span className="text-blue-600">{query}</span>
           </h2>
         )}
-        
 
         {!isLoading && results.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
             {results.map((item) => (
               <SearchCard
                 key={item.publicDbId}
-                image={item.imageUrl || "https://via.placeholder.com/150"}
-                title={item.title_english || item.title}
+                image={
+                  activeSection.toLowerCase() === "anime"
+                  ?item.imageUrl || "https://via.placeholder.com/150"
+                  :item.imgUrl || "https://via.placeholder.com/150"
+                }
+                title={
+                  activeSection.toLowerCase() === "anime"
+                    ? item.title_english || item.title
+                    : item.title
+                }
                 rating={item.score || "N/A"}
               />
             ))}
           </div>
         )}
 
+        
         {!isLoading && !error && results.length === 0 && query && (
           <p className="text-gray-600 text-center mt-6">No results found.</p>
         )}
