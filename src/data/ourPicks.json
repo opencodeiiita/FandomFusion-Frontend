@@ -127,6 +127,29 @@
             "why": "due to short playtime"
           }
         ]
+      },
+        {
+        "contributor": "Aditya Ajay",
+        "entries": [
+          {
+            "type": "anime",
+            "id": "1735",
+            "name": "Naruto: Shippuuden",
+            "why": "A worldwide famous anime"
+          },
+          {
+            "type": "movie",
+            "id": "1930",
+            "name": "The Amazing Spider-Man",
+            "why": "Peter Parker is an outcast high schooler abandoned by his parents as a boy, leaving him to be raised by his Uncle Ben and Aunt May. Like most teenagers, Peter is trying to figure out who he is and how he got to be the person he is today."
+          },   
+          {
+            "type": "game",
+            "id": "35358",
+            "name": "The Witcher",
+            "why": "The Witcher is the very first instalment of the series that follows the story of Geralt from Rivia. Being found unconscious on the battlefield he must retrieve his memory and help the emperor's daughter"
+          }
+        ]
       }
     ]
   }
