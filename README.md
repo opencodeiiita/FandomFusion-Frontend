@@ -222,21 +222,3 @@ Let’s create something amazing together. 🌟
    `GitHub:` [Gamin8ing](https://github.com/Gamin8ing)  
    `Discord:` gamin8ing
 
-## 💪 Thanks To All Contributors
-
-Every contributor is a part of our fandom family. Show off your profile picture here and let the world know you’re part of the magic:
-
-<div align="left">
-    <!-- FORMAT TO ADD YOUR ENTRY
-    <a href="https://github.com/<GITHUB_USERNAME>" title="<GITHUB_USERNAME>">
-        <img src="https://github.com/<GITHUB_USERNAME>.png" width="70px" style="border-radius: 50%" alt="<FULL_NAME>">
-    </a>
-    replace <GITHUB_USERNAME> with your GitHub username
-    replace <FULL_NAME> with your full name
-    -->
-    <a href="https://github.com/Gamin8ing" title="Gamin8ing">
-        <img src="https://github.com/Gamin8ing.png" width="50px" alt="Arpit Anand">
-    </a>
-</div>
-
-Join us and let’s celebrate fandoms together!
